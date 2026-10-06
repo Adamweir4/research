@@ -1,0 +1,332 @@
+/* ——————————————————————————————————————————————
+   Weir Research — site stylesheet
+   Ledger aesthetic: white paper, green-black ink,
+   Spectral for prose, Archivo for data.
+   —————————————————————————————————————————————— */
+
+:root {
+  --paper: #ffffff;
+  --ink: #17221c;
+  --ink-soft: #5c6861;
+  --rule: #d7ded8;
+  --rule-strong: #17221c;
+  --ledger: #1e6b4e;
+  --ledger-deep: #14503a;
+  --sell: #9a3b2e;
+  --wash: #f2f5f2;
+  --wash-warm: #f7f6f1;
+
+  --serif: "Spectral", Georgia, serif;
+  --grot: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  --col: 44rem;       /* reading column */
+  --col-wide: 58rem;  /* tables & ledger */
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-feature-settings: "liga" 1;
+}
+
+/* ———— layout ———— */
+
+.shell {
+  max-width: var(--col-wide);
+  margin: 0 auto;
+  padding: 0 1rem 6rem;
+}
+
+.prose, .masthead-inner, .foot-inner {
+  max-width: var(--col);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wide { max-width: var(--col-wide); margin-left: auto; margin-right: auto; }
+
+/* ———— masthead ———— */
+
+.masthead { padding: 2.75rem 0 0; }
+
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.wordmark em { font-style: italic; font-weight: 500; color: var(--ledger-deep); }
+
+.masthead-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+}
+
+nav.site-nav { font-family: var(--grot); font-size: 0.86rem; }
+nav.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-left: 1.15rem;
+  padding-bottom: 0.2rem;
+}
+nav.site-nav a:first-child { margin-left: 0; }
+nav.site-nav a:hover { color: var(--ledger-deep); }
+nav.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 2px solid var(--ledger);
+}
+
+/* the ledger rule: thin over thick, an accountant's closing line inverted */
+.masthead::after {
+  content: "";
+  display: block;
+  max-width: var(--col-wide);
+  margin: 1.1rem auto 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 3px solid var(--rule-strong);
+  height: 3px;
+}
+
+/* ———— type scale ———— */
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.2; letter-spacing: -0.012em; }
+
+h1 { font-size: 2.1rem; font-weight: 600; margin: 2.6rem 0 0.4rem; }
+h2 { font-size: 1.4rem; font-weight: 600; margin: 2.6rem 0 0.7rem; }
+h3 { font-size: 1.08rem; font-weight: 600; margin: 2rem 0 0.4rem; }
+
+p { margin: 0 0 1.1rem; }
+a { color: var(--ledger-deep); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--ledger); }
+
+.kicker {
+  font-family: var(--grot);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 2.6rem 0 -2.2rem;
+}
+
+.dek {
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0.3rem 0 1.6rem;
+}
+
+.byline {
+  font-family: var(--grot);
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin: 0 0 2.2rem;
+}
+.byline b { color: var(--ink); font-weight: 600; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.6rem 0; }
+
+blockquote {
+  margin: 1.4rem 0;
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  border-left: 3px solid var(--ledger);
+  color: var(--ink);
+  font-style: italic;
+}
+
+ul, ol { padding-left: 1.3rem; margin: 0 0 1.1rem; }
+li { margin-bottom: 0.35rem; }
+
+strong { font-weight: 600; }
+
+/* ———— data: tables, figures, chips ———— */
+
+.num, td.num, th.num { font-variant-numeric: tabular-nums; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--grot);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  margin: 1.4rem 0 0.5rem;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 0.55rem;
+}
+caption .sub {
+  display: block;
+  font-family: var(--grot);
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: var(--wash);
+  padding: 0.5rem 0.65rem;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
+}
+
+td {
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+td.num, th.num { text-align: right; }
+
+/* accountant's double rule closes every table */
+tbody tr:last-child td { border-bottom: 3px double var(--rule-strong); }
+
+tr.total td { font-weight: 600; border-top: 1px solid var(--rule-strong); }
+
+.tablenote {
+  font-family: var(--grot);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin: 0.4rem 0 2rem;
+}
+
+/* exhibit figures */
+figure.exhibit { margin: 1.6rem 0 0.4rem; }
+figure.exhibit figcaption {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 0.1rem;
+}
+figure.exhibit figcaption .sub {
+  display: block;
+  font-family: var(--grot);
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+figure.exhibit img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.7rem;
+  border: 1px solid var(--rule);
+}
+
+.scroll { overflow-x: auto; }
+
+/* status chips */
+.chip {
+  display: inline-block;
+  font-family: var(--grot);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.12rem 0.5rem 0.16rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.chip.long   { color: var(--ledger-deep); background: #e5f0ea; }
+.chip.watch  { color: #7a6212; background: #f6efd8; }
+.chip.exited { color: var(--sell); background: #f6e7e3; }
+.chip.note   { color: var(--ink-soft); background: var(--wash); }
+
+.pos { color: var(--ledger-deep); }
+.neg { color: var(--sell); }
+
+/* verdict cells in evidence ledgers */
+td.good    { color: var(--ledger-deep); font-weight: 600; }
+td.neutral { color: var(--ink-soft); font-weight: 600; }
+td.watch   { color: #7a6212; font-weight: 600; }
+
+/* ———— index: entry lists ———— */
+
+.entries { list-style: none; padding: 0; margin: 0.8rem 0 0; }
+.entries li {
+  display: grid;
+  grid-template-columns: 7.2rem 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.entries .date {
+  font-family: var(--grot);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.entries .title { font-family: var(--serif); font-size: 1.02rem; }
+.entries .title a { color: var(--ink); text-decoration: none; }
+.entries .title a:hover { color: var(--ledger-deep); text-decoration: underline; }
+.entries .title .dek-inline {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.1rem;
+}
+
+/* ———— pitch header block ———— */
+
+.pitch-facts {
+  font-family: var(--grot);
+  font-size: 0.86rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0.55rem 1.4rem;
+  padding: 1rem 1.1rem;
+  background: var(--wash);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 3px double var(--rule-strong);
+  margin: 1.6rem 0 2.2rem;
+}
+.pitch-facts div span { display: block; color: var(--ink-soft); font-size: 0.76rem; }
+.pitch-facts div b { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ———— footer ———— */
+
+footer.site-foot {
+  margin-top: 5rem;
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 1.2rem;
+  font-family: var(--grot);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+footer.site-foot a { color: var(--ink-soft); }
+
+/* ———— small screens ———— */
+
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.7rem; }
+  .entries li { grid-template-columns: 1fr; gap: 0.15rem; }
+  .pitch-facts { grid-template-columns: 1fr 1fr; }
+}
+
+:focus-visible { outline: 2px solid var(--ledger); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
