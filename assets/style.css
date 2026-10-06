@@ -304,6 +304,20 @@ td.watch   { color: #7a6212; font-weight: 600; }
 .pitch-facts div span { display: block; color: var(--ink-soft); font-size: 0.76rem; }
 .pitch-facts div b { font-weight: 600; font-variant-numeric: tabular-nums; }
 
+/* ———— paper: equations & references ———— */
+
+.eq {
+  font-family: var(--serif);
+  font-style: italic;
+  text-align: center;
+  margin: 1.3rem 0;
+  font-size: 1rem;
+}
+.eq .eqno { float: right; font-style: normal; color: var(--ink-soft); font-family: var(--grot); font-size: 0.82rem; }
+
+.refs { list-style: none; padding: 0; margin: 0.8rem 0 0; font-size: 0.95rem; }
+.refs li { padding-left: 1.6rem; text-indent: -1.6rem; margin-bottom: 0.55rem; }
+
 /* ———— footer ———— */
 
 footer.site-foot {
