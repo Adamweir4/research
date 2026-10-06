@@ -46,7 +46,8 @@ Fill in the GitHub link in the index.html footer once the repo exists.
   exhibit images in `assets/`, add a ledger row on `index.html` and
   `track-record.html`, add a Writing entry on `index.html`.
 - New update or macro note: copy `updates/fds-q4-scorecard.html`, add a Writing entry
-  (macro pieces also get listed on `research.html`).
+  (macro pieces also get listed on `research.html`). A ticker update ALSO gets a row in
+  "The record on this idea" list on its thesis page, newest first.
 - Exit: move the row from Open to Closed on `track-record.html`, write the exit post.
 
 ## Style rules
