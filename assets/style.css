@@ -366,6 +366,7 @@ footer.site-foot a { color: var(--ink-soft); }
 
 /* print pagination: smaller figures, no orphaned headings or captions */
 @media print {
+  .masthead { display: none; }
   figure.exhibit, .wide .scroll, .series { break-inside: avoid; }
   figure.exhibit img { max-height: 32vh; width: auto; max-width: 84%; display: block; margin: 0 auto; }
   .tablenote { break-before: avoid; }
