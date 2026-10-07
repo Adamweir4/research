@@ -363,3 +363,11 @@ footer.site-foot a { color: var(--ink-soft); }
 .scard .sdek { font-size: 0.88rem; line-height: 1.45; color: var(--ink-soft); flex: 1; }
 .scard .sfact { font-family: var(--grot); font-size: 0.78rem; color: var(--ink); border-top: 1px solid var(--rule); padding-top: 0.5rem; }
 .scard .sall { font-family: var(--grot); font-size: 0.78rem; }
+
+/* print pagination: smaller figures, no orphaned headings or captions */
+@media print {
+  figure.exhibit, .wide .scroll, .series { break-inside: avoid; }
+  figure.exhibit img { max-height: 32vh; width: auto; max-width: 84%; display: block; margin: 0 auto; }
+  .tablenote { break-before: avoid; }
+  h1, h2, h3, .flaghead, .fires { break-after: avoid; }
+}
